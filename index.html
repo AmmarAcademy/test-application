@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-size: 16px;
+      color: #555;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .success {
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hello, World!</h1>
+
+    <form id="nameForm">
+      <label for="username">Enter your name:</label><br>
+      <input type="text" id="username" name="username" required>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="message" class="success">
+      Success! Your name has been submitted.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("nameForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // prevent page reload
+      const userName = document.getElementById("username").value.trim();
+      if (userName) {
+        const messageDiv = document.getElementById("message");
+        messageDiv.textContent = `Success! Your name (${userName}) has been submitted.`;
+        messageDiv.style.display = "block";
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
